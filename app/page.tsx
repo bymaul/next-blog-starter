@@ -26,10 +26,12 @@ export default function Home() {
     );
 
     return (
-        <div className='py-8'>
-            <div className='mb-8 text-center'>
-                <h1 className='text-2xl font-black'>Next.js Blog Starter</h1>
-                <p className='text-sm'>
+        <section className='pb-8'>
+            <div className='text-center mb-10'>
+                <h1 className='text-3xl font-bold mb-1'>
+                    Next.js Blog Starter
+                </h1>
+                <p className='text-xs text-gray-600'>
                     Crafted by{' '}
                     <a
                         href='https://maul-portfolio.vercel.app'
@@ -41,6 +43,6 @@ export default function Home() {
             {posts.map((post, idx) => (
                 <PostCard key={idx} {...post} />
             ))}
-        </div>
+        </section>
     );
 }
