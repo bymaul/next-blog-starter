@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* MDX styles */
+
+.prose {
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
+    h6 a {
+        @apply no-underline;
+    }
+
+    ul.contains-task-list {
+        @apply list-none p-0 m-0;
+
+        li.task-list-item,
+        li.task-list-item input[type='checkbox'] {
+            @apply p-0 m-0;
+        }
+    }
+}
+
 /* rehype-pretty-code styles */
 
 [data-rehype-pretty-code-fragment] {

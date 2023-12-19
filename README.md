@@ -1,5 +1,5 @@
 Under Development
 
 -   [x] Theme Switcher
--   [ ] UI Design
+-   [x] UI
 -   [ ] SEO Optimization
