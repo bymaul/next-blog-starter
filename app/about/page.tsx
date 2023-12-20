@@ -1,5 +1,36 @@
-import Link from 'next/link';
-import { FaGithub } from 'react-icons/fa6';
+import { WEBSITE_HOST_URL } from '@/lib/constants';
+import { Metadata } from 'next';
+
+const meta = {
+    title: 'About',
+    description: 'About next.js blog starter template with Contentlayer',
+    url: `${WEBSITE_HOST_URL}/about`,
+    image: `${WEBSITE_HOST_URL}/og-image.png`,
+};
+
+export const metadata: Metadata = {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+        title: meta.title,
+        description: meta.description,
+        url: meta.url,
+        images: [
+            {
+                url: meta.image,
+            },
+        ],
+    },
+    twitter: {
+        title: meta.title,
+        description: meta.description,
+        images: meta.image,
+        card: 'summary_large_image',
+    },
+    alternates: {
+        canonical: meta.url,
+    },
+};
 
 export default function About() {
     return (

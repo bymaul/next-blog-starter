@@ -11,7 +11,7 @@ export default function PostCard(post: Post) {
             <h2 className='font-semibold text-xl'>
                 <Link href={post.url}>{post.title}</Link>
             </h2>
-            <p>{post.excerpt}</p>
+            <p>{post.description}</p>
         </div>
     );
 }

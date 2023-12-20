@@ -6,12 +6,56 @@ import './globals.css';
 import { ThemeProvider } from './providers';
 import Navigation from '@/components/Navigation';
 import { FaGithub } from 'react-icons/fa6';
+import { WEBSITE_HOST_URL } from '@/lib/constants';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
+const meta = {
     title: 'Next.js Blog Starter',
     description: 'Next.js blog starter template with Contentlayer',
+    image: `${WEBSITE_HOST_URL}/og-image.png`,
+};
+
+export const metadata: Metadata = {
+    title: {
+        default: meta.title,
+        template: `%s / ${meta.title}`,
+    },
+    description: meta.description,
+    openGraph: {
+        title: meta.title,
+        description: meta.description,
+        url: WEBSITE_HOST_URL,
+        siteName: meta.title,
+        locale: 'en-US',
+        type: 'website',
+        images: [
+            {
+                url: meta.image,
+            },
+        ],
+    },
+    twitter: {
+        title: meta.title,
+        description: meta.description,
+        images: meta.image,
+        card: 'summary_large_image',
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+    alternates: {
+        canonical: WEBSITE_HOST_URL,
+    },
 };
 
 export default function RootLayout({
