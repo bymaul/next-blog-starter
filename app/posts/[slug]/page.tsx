@@ -1,11 +1,11 @@
-import { format, parseISO } from 'date-fns';
+import { siteConfig } from '@/config/site';
 import { allPosts } from 'contentlayer/generated';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import { format, parseISO } from 'date-fns';
 import type { MDXComponents } from 'mdx/types';
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 import Image from 'next/image';
-import { WEBSITE_HOST_URL } from '@/lib/constants';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 export const generateStaticParams = async () =>
     allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
@@ -26,14 +26,14 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
             description,
             type: 'article',
             publishedTime: date,
-            url: `${WEBSITE_HOST_URL}${url}`,
+            url: `${siteConfig.url}${url}`,
         },
         twitter: {
             title,
             description,
         },
         alternates: {
-            canonical: `${WEBSITE_HOST_URL}${url}`,
+            canonical: `${siteConfig.url}${url}`,
         },
     };
 };

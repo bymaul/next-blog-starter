@@ -1,44 +1,39 @@
+import Navigation from '@/components/Navigation';
 import ThemeToggle from '@/components/ThemeToggle';
+import { siteConfig } from '@/config/site';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import './globals.css';
-import { ThemeProvider } from './providers';
-import Navigation from '@/components/Navigation';
 import { FaGithub } from 'react-icons/fa6';
-import { WEBSITE_HOST_URL } from '@/lib/constants';
+import { ThemeProvider } from './providers';
+
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const meta = {
-    title: 'Next.js Blog Starter',
-    description: 'Next.js blog starter template with Contentlayer',
-    image: `${WEBSITE_HOST_URL}/og-image.png`,
-};
-
 export const metadata: Metadata = {
     title: {
-        default: meta.title,
-        template: `%s / ${meta.title}`,
+        default: siteConfig.title,
+        template: `%s / ${siteConfig.title}`,
     },
-    description: meta.description,
+    description: siteConfig.description,
     openGraph: {
-        title: meta.title,
-        description: meta.description,
-        url: WEBSITE_HOST_URL,
-        siteName: meta.title,
+        title: siteConfig.title,
+        description: siteConfig.description,
+        url: siteConfig.url,
+        siteName: siteConfig.title,
         locale: 'en-US',
         type: 'website',
         images: [
             {
-                url: meta.image,
+                url: siteConfig.image,
             },
         ],
     },
     twitter: {
-        title: meta.title,
-        description: meta.description,
-        images: meta.image,
+        title: siteConfig.title,
+        description: siteConfig.description,
+        images: siteConfig.image,
         card: 'summary_large_image',
     },
     robots: {
@@ -54,7 +49,7 @@ export const metadata: Metadata = {
         },
     },
     alternates: {
-        canonical: WEBSITE_HOST_URL,
+        canonical: siteConfig.url,
     },
 };
 
@@ -76,7 +71,7 @@ export default function RootLayout({
                         <p>
                             Crafted by{' '}
                             <Link
-                                href='https://maul-portfolio.vercel.app'
+                                href='https://maulana.dev/'
                                 target='_blank'
                                 className='font-semibold'>
                                 Maulana
@@ -84,8 +79,7 @@ export default function RootLayout({
                         </p>
                         <Link
                             className='inline-flex justify-center items-center gap-3 py-2 px-3 dark:bg-white dark:hover:bg-gray-100 dark:text-black bg-black hover:bg-gray-900 text-white rounded-lg'
-                            href='https://github.com/bymaul/next-blog-starter'
-                            target='_blank'>
+                            href='https://github.com/bymaul/next-blog-starter'>
                             <FaGithub />
                             Get the Source Code
                         </Link>

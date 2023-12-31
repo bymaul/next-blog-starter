@@ -1,11 +1,11 @@
-import { WEBSITE_HOST_URL } from '@/lib/constants';
+import { siteConfig } from '@/config/site';
 import { Metadata } from 'next';
 
 const meta = {
     title: 'About',
     description: 'About next.js blog starter template with Contentlayer',
-    url: `${WEBSITE_HOST_URL}/about`,
-    image: `${WEBSITE_HOST_URL}/og-image.png`,
+    url: `${siteConfig.url}/about`,
+    image: `${siteConfig.url}/og-image.png`,
 };
 
 export const metadata: Metadata = {
