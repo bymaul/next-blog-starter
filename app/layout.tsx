@@ -17,6 +17,9 @@ export const metadata: Metadata = {
         template: `%s / ${siteConfig.title}`,
     },
     description: siteConfig.description,
+    verification: {
+        google: process.env.GOOGLE_SITE_VERIFICATION,
+    },
     openGraph: {
         title: siteConfig.title,
         description: siteConfig.description,
