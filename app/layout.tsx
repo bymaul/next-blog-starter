@@ -1,4 +1,4 @@
-import Navigation from '@/components/nav';
+import Navigation from '@/components/navigation';
 import ThemeToggle from '@/components/theme-toggle';
 import { siteConfig } from '@/config/site';
 import type { Metadata } from 'next';
