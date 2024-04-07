@@ -1,5 +1,5 @@
 import { siteConfig } from '@/config/site';
-import { allPosts } from 'contentlayer/generated';
+import { getAllPosts } from '@/lib/mdx';
 
 export default async function sitemap() {
     const routes = ['', '/about'].map((route) => ({
@@ -7,9 +7,9 @@ export default async function sitemap() {
         lastModified: new Date(),
     }));
 
-    const posts = allPosts.map((post) => ({
-        url: `${siteConfig.url}${post.url}`,
-        lastModified: post.date,
+    const posts = getAllPosts().map((post) => ({
+        url: `${siteConfig.url}/posts/${post.slug}`,
+        lastModified: post.metadata.publishedAt,
     }));
 
     return [...routes, ...posts];

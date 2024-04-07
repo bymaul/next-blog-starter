@@ -2,7 +2,6 @@ Next.js blog starter template for your blog or personal site, built with:
 
 -   Next.js 14 (App Router)
 -   MDX
--   Contentlayer
 -   Tailwind
 
 ## Getting Started
@@ -23,7 +22,7 @@ You can now access the application via http://localhost:3000
 
 Blog posts can be added to the `posts` directory, in the root folder.
 
-Update the `WEBSITE_HOST_URL` when taking your site live. It's in `/src/lib/constants.ts`
+Update the `url` when taking your site live. It's in `/config/site.ts`
 
 Make sure to update the `sitemap.ts` file, specifically the `const routes` if you add more pages to the website.
 
