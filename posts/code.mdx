@@ -1,15 +1,14 @@
 ---
-title: Rehype Pretty Code
-description: Basic example of the rehype-pretty-code plugin.
-date: 2023-12-17
+title: Code
+summary: Basic example of code snippet.
+publishedAt: 2023-12-17
 ---
 
-Here is a demo of the `rehype-pretty-code` plugin. It is used to format code blocks in markdown files.
+Here is a demo of code snippet. It is used to format code blocks in markdown files.
 
 ## Example 1 
 
-```tsx title="components/PostCard.tsx" showLineNumbers
-// ```tsx title="components/PostCard.tsx" showLineNumbers
+```tsx
 function PostCard(post: Post) {
     return (
         <div className='mb-8'>
@@ -32,8 +31,7 @@ function PostCard(post: Post) {
 
 ## Example 2
 
-```tsx {11,13-17,23} /post/
-//```tsx {11,13-17,23} /post/
+```tsx
 const PostLayout = ({ params }: { params: { slug: string } }) => {
     const post = allPosts.find(
         (post) => post._raw.flattenedPath === params.slug
@@ -60,5 +58,3 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     );
 };
 ```
-
-For more information, see the <a href='https://rehype-pretty-code.netlify.app/' target='_blank'>official documentation</a>.

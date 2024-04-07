@@ -1,5 +1,5 @@
-import Navigation from '@/components/Navigation';
-import ThemeToggle from '@/components/ThemeToggle';
+import Navigation from '@/components/navigation';
+import ThemeToggle from '@/components/theme-toggle';
 import { siteConfig } from '@/config/site';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -84,7 +84,7 @@ export default function RootLayout({
                             className='inline-flex justify-center items-center gap-3 py-2 px-3 dark:bg-white dark:hover:bg-gray-100 dark:text-black bg-black hover:bg-gray-900 text-white rounded-lg'
                             href='https://github.com/bymaul/next-blog-starter'>
                             <FaGithub />
-                            Get the Source Code
+                            Source Code
                         </Link>
                     </footer>
                 </ThemeProvider>
