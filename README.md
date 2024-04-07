@@ -10,18 +10,20 @@ Next.js blog starter template for your blog or personal site, built with:
 First, make sure have [Node.js](https://nodejs.org/en) installed on your machine.
 
 ```bash
-npx create-next-app -e https://github.com/bymaul/next-blog-starter
+git clone https://github.com/bymaul/next-blog-starter
 
 cd next-blog-starter
 
-npm run dev
+bun install
+
+bun run dev
 ```
 
 You can now access the application via http://localhost:3000
 
 Blog posts can be added to the `posts` directory, in the root folder.
 
-Update the `WEBSITE_HOST_URL` when taking your site live. This lives in `/src/lib/constants.ts`
+Update the `WEBSITE_HOST_URL` when taking your site live. It's in `/src/lib/constants.ts`
 
 Make sure to update the `sitemap.ts` file, specifically the `const routes` if you add more pages to the website.
 
