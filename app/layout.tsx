@@ -62,7 +62,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang='en'>
+        <html lang='en' suppressHydrationWarning>
             <body className={`${inter.className} px-4 max-w-screen-md mx-auto`}>
                 <ThemeProvider attribute='class'>
                     <header className='flex justify-between gap-4 items-center py-6'>
